@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vende tu casa en Ciudad López Mateos | Nivel Premium Real Estate</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            dark: '#1c1c1c',
+                            light: '#f9f9f9',
+                            gold: '#c5a880',
+                            gray: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para efectos sutiles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+        img {
+            transition: transform 0.7s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans text-luxury-dark bg-luxury-light antialiased">
+
+    <!-- Navegación -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center text-white transition-all duration-300">
+        <div class="flex items-center space-x-2">
+            <!-- Logo Simulado -->
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13v7h-6v-5h-6v5H3v-7L12 4l9 9z"/></svg>
+            <span class="text-xl font-light tracking-widest uppercase">LEVEL <span id="nav-subtitle" class="text-sm text-gray-300 transition-colors duration-300">Estate</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-light tracking-wider uppercase">
+            <a href="#beneficios" class="hover:text-luxury-gold transition-colors duration-300">Beneficios</a>
+            <a href="#zonas" class="hover:text-luxury-gold transition-colors duration-300">Zonas</a>
+            <a href="#testimonios" class="hover:text-luxury-gold transition-colors duration-300">Testimonios</a>
+        </div>
+        <div>
+            <a href="#formulario" id="nav-cta" class="bg-white/10 hover:bg-white hover:text-black border border-white px-6 py-2 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300">
+                Let's Talk
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Formulario -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-4 md:px-12">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Residencia de lujo" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay oscuro -->
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
+            <!-- Texto Hero -->
+            <div class="text-white text-center lg:text-left">
+                <h1 class="text-4xl md:text-6xl font-light tracking-tight mb-4 uppercase">
+                    Vende tu casa <br> <span class="font-semibold">en 30 días</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-serif italic text-gray-200 mb-6">
+                    en Ciudad López Mateos
+                </p>
+                <p class="text-sm md:text-base font-light tracking-wide text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
+                    Tu visión define el destino. Nuestra experiencia, el camino. Gestionamos la venta de tu propiedad con marketing premium, discreción absoluta y acceso a una red exclusiva de compradores.
+                </p>
+                
+                <!-- Beneficios rápidos (Viñetas) -->
+                <ul class="space-y-3 text-sm font-light text-gray-200 mb-8 hidden md:block">
+                    <li class="flex items-center"><i class="fa-solid fa-check text-luxury-gold mr-3"></i> Valuación precisa del mercado</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-luxury-gold mr-3"></i> Fotografía y recorridos virtuales 4K</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-luxury-gold mr-3"></i> Asesoría legal y financiera integral</li>
+                </ul>
+            </div>
+
+            <!-- Formulario de Conversión -->
+            <div id="formulario" class="glass-panel p-8 md:p-10 rounded-sm shadow-2xl w-full max-w-md mx-auto lg:ml-auto">
+                <h2 class="text-2xl font-medium tracking-wide mb-2 uppercase text-center">Solicita una Valuación</h2>
+                <p class="text-center text-sm text-gray-500 mb-8 font-light">Déjanos tus datos y un asesor premium te contactará hoy mismo.</p>
+                
+                <form action="#" method="POST" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">Nombre Completo</label>
+                        <input type="text" required class="w-full border-b border-gray-300 bg-transparent py-2 px-1 text-sm focus:outline-none focus:border-luxury-dark transition" placeholder="Ej. Carlos Mendoza">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">Teléfono Móvil</label>
+                        <input type="tel" required class="w-full border-b border-gray-300 bg-transparent py-2 px-1 text-sm focus:outline-none focus:border-luxury-dark transition" placeholder="Ej. 55 1234 5678">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">Correo Electrónico</label>
+                        <input type="email" required class="w-full border-b border-gray-300 bg-transparent py-2 px-1 text-sm focus:outline-none focus:border-luxury-dark transition" placeholder="tu@correo.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold tracking-wider text-gray-500 uppercase mb-1">Tipo de Propiedad</label>
+                        <select class="w-full border-b border-gray-300 bg-transparent py-2 px-1 text-sm focus:outline-none focus:border-luxury-dark transition text-gray-600">
+                            <option value="">Selecciona una opción...</option>
+                            <option value="casa">Casa</option>
+                            <option value="departamento">Departamento</option>
+                            <option value="terreno">Terreno</option>
+                        </select>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-luxury-dark text-white uppercase tracking-widest text-sm font-semibold py-4 hover:bg-black transition duration-300 shadow-lg">
+                            Agendar Visita Gratuita
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-gray-400 text-center mt-4">
+                        Al enviar este formulario aceptas nuestra <a href="#" class="underline">política de privacidad</a>. Tus datos están seguros.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios / Metodología (Estilo Lista 01, 02) -->
+    <section id="beneficios" class="py-20 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-light tracking-tight uppercase mb-16 text-center">Nuestra Metodología</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Beneficio 1 -->
+                <div class="group cursor-default">
+                    <span class="text-5xl font-serif text-gray-200 mb-4 block group-hover:text-luxury-gold transition duration-300">01</span>
+                    <h3 class="text-lg font-semibold tracking-wide uppercase mb-3 border-b border-gray-200 pb-2">Valuación Real</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">
+                        Analizamos el mercado local de Ciudad López Mateos para fijar el precio óptimo que garantice la rentabilidad y rapidez de la venta.
+                    </p>
+                </div>
+                <!-- Beneficio 2 -->
+                <div class="group cursor-default">
+                    <span class="text-5xl font-serif text-gray-200 mb-4 block group-hover:text-luxury-gold transition duration-300">02</span>
+                    <h3 class="text-lg font-semibold tracking-wide uppercase mb-3 border-b border-gray-200 pb-2">Marketing Premium</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">
+                        Destacamos tu propiedad con fotografía profesional, drones y posicionamiento destacado en los principales portales y redes.
+                    </p>
+                </div>
+                <!-- Beneficio 3 -->
+                <div class="group cursor-default">
+                    <span class="text-5xl font-serif text-gray-200 mb-4 block group-hover:text-luxury-gold transition duration-300">03</span>
+                    <h3 class="text-lg font-semibold tracking-wide uppercase mb-3 border-b border-gray-200 pb-2">Red de Compradores</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">
+                        Filtramos prospectos pre-calificados financieramente, evitando visitas innecesarias y asegurando ofertas serias.
+                    </p>
+                </div>
+                <!-- Beneficio 4 -->
+                <div class="group cursor-default">
+                    <span class="text-5xl font-serif text-gray-200 mb-4 block group-hover:text-luxury-gold transition duration-300">04</span>
+                    <h3 class="text-lg font-semibold tracking-wide uppercase mb-3 border-b border-gray-200 pb-2">Cierre Seguro</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">
+                        Nuestro equipo legal se encarga de la tramitología, contratos y escrituración para que tu única preocupación sea entregar las llaves.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zonas (Estilo de la Imagen 2) -->
+    <section id="zonas" class="py-20 px-4 md:px-12 bg-luxury-light">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-sm font-semibold tracking-widest uppercase text-luxury-gray mb-10">Zonas de Especialidad</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Zona 1 -->
+                <div class="relative h-80 overflow-hidden group hover-zoom cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zona Esmeralda" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <h3 class="text-xl font-medium tracking-wide mb-1">Zona Esmeralda</h3>
+                        <p class="text-xs font-light tracking-widest uppercase opacity-80">Cd. López Mateos</p>
+                    </div>
+                </div>
+                <!-- Zona 2 -->
+                <div class="relative h-80 overflow-hidden group hover-zoom cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Atizapán Centro" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <h3 class="text-xl font-medium tracking-wide mb-1">Atizapán Centro</h3>
+                        <p class="text-xs font-light tracking-widest uppercase opacity-80">Cd. López Mateos</p>
+                    </div>
+                </div>
+                <!-- Zona 3 -->
+                <div class="relative h-80 overflow-hidden group hover-zoom cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1613490900233-ea41ddbc0468?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Club de Golf" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <h3 class="text-xl font-medium tracking-wide mb-1">Club de Golf</h3>
+                        <p class="text-xs font-light tracking-widest uppercase opacity-80">Valle Escondido</p>
+                    </div>
+                </div>
+                <!-- Zona 4 -->
+                <div class="relative h-80 overflow-hidden group hover-zoom cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Las Arboledas" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <h3 class="text-xl font-medium tracking-wide mb-1">Las Arboledas</h3>
+                        <p class="text-xs font-light tracking-widest uppercase opacity-80">Cd. López Mateos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#formulario" class="inline-block bg-luxury-dark text-white px-8 py-3 rounded-full text-xs font-semibold tracking-widest uppercase hover:bg-black transition duration-300">
+                    Vender en mi zona
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Intermedio (Inspirado en la imagen de la chica leyendo) -->
+    <section class="relative py-32 px-4 text-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600607687126-8a3414349a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Vista panorámica" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-light text-white mb-6 uppercase tracking-tight">Tu visión define el destino.<br>Nuestra experiencia, el camino.</h2>
+            <a href="#formulario" class="text-white text-sm font-light tracking-widest uppercase border-b border-white pb-1 hover:text-luxury-gold hover:border-luxury-gold transition duration-300">About Us &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Social Proof / Testimonios -->
+    <section id="testimonios" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-light tracking-tight uppercase mb-12">Historias de Éxito</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-luxury-gold mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 font-serif italic mb-6">"Estaba estancado intentando vender por mi cuenta. El equipo tomó el control, hicieron un reportaje fotográfico espectacular y en 22 días firmamos el contrato. Transparencia total."</p>
+                    <p class="text-sm font-semibold uppercase tracking-wider">— Roberto M., Zona Esmeralda</p>
+                </div>
+                <div class="p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-luxury-gold mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 font-serif italic mb-6">"Profesionalismo desde el primer minuto. Me dieron una valuación realista, trajeron clientes realmente interesados y me apoyaron con toda la notaría. Altamente recomendables."</p>
+                    <p class="text-sm font-semibold uppercase tracking-wider">— Familia Garza, Las Arboledas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-luxury-dark text-white pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <span class="text-xl font-light tracking-widest uppercase block mb-4">LEVEL <span class="text-sm text-gray-400">Estate</span></span>
+                <p class="text-sm text-gray-400 font-light max-w-xs">Especialistas en bienes raíces de alto nivel en Ciudad López Mateos y Estado de México.</p>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold tracking-widest uppercase mb-4 text-gray-300">Contacto</h4>
+                <ul class="text-sm text-gray-400 font-light space-y-2">
+                    <li><i class="fa-solid fa-phone mr-2"></i> +52 55 1234 5678</li>
+                    <li><i class="fa-solid fa-envelope mr-2"></i> contacto@levelestate.mx</li>
+                    <li><i class="fa-solid fa-location-dot mr-2"></i> Ciudad López Mateos, Edo. Mex.</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold tracking-widest uppercase mb-4 text-gray-300">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; 2026 Level Real Estate. Todos los derechos reservados.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition">Aviso de Privacidad</a>
+                <a href="#" class="hover:text-white transition">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para Menú Sticky -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const navSubtitle = document.getElementById('nav-subtitle');
+            const navCta = document.getElementById('nav-cta');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    // Estilo Menú Blanco (al hacer scroll)
+                    navbar.classList.remove('py-6', 'text-white', 'bg-transparent');
+                    navbar.classList.add('py-4', 'bg-white', 'text-luxury-dark', 'shadow-md');
+                    
+                    navSubtitle.classList.remove('text-gray-300');
+                    navSubtitle.classList.add('text-gray-500');
+
+                    navCta.classList.remove('bg-white/10', 'border-white', 'hover:bg-white', 'hover:text-black');
+                    navCta.classList.add('border-luxury-dark', 'text-luxury-dark', 'hover:bg-luxury-dark', 'hover:text-white');
+                } else {
+                    // Estilo Menú Transparente (hasta arriba)
+                    navbar.classList.add('py-6', 'text-white', 'bg-transparent');
+                    navbar.classList.remove('py-4', 'bg-white', 'text-luxury-dark', 'shadow-md');
+                    
+                    navSubtitle.classList.add('text-gray-300');
+                    navSubtitle.classList.remove('text-gray-500');
+
+                    navCta.classList.add('bg-white/10', 'border-white', 'hover:bg-white', 'hover:text-black');
+                    navCta.classList.remove('border-luxury-dark', 'text-luxury-dark', 'hover:bg-luxury-dark', 'hover:text-white');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
